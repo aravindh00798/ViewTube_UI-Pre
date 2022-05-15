@@ -1,0 +1,28 @@
+
+
+<div class="ui left grid" style="margin-bottom: 0.1rem;" style="margin-top: 0.5rem;">
+  <div class="fourteen wide column">
+
+    <h1 class="ui left aligned header">
+         <img class = "sieze" src="https://cdn.pixabay.com/photo/2021/10/11/23/49/app-6702045__340.png" routerLink="home/Categories">
+         Categories
+      </h1>
+
+      <br>
+
+  </div>
+</div>
+
+
+  <select (change)="onChange($event)">
+      <option value="all">General</option>
+      <ng-container *ngFor="let category of cat">
+
+        <option *ngIf="category.assignable" [value]="category.id" >{{category.title}}</option>
+
+      </ng-container>
+
+  </select>
+  <button (click)=" getTwo()">Click me</button>
+
+  <app-cat-container></app-cat-container>
